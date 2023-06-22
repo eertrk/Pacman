@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e994b0c7cd2c04048a44268da4fd637a, type: 3}
-  m_Name: New Quest 1
+  m_Name: HexagonQuest
   m_EditorClassIdentifier: 
   questName: 
   questDescription: "5 adet alt\u0131gen \xF6\u011Fe toplay\u0131n"
   count: 5
   targetObject: {fileID: 2188181599853930587, guid: 761eca4b61da59e429b1a128a7bdc565, type: 3}
   pacmanObject: {fileID: 1800945588304686273, guid: de0bfc5edcfa7e44cbf968a18295f7f4, type: 3}
-  isCompleted: 0
+  isCompleted: 1

@@ -1641,6 +1641,7 @@ MonoBehaviour:
   confettiObject: {fileID: 129898, guid: 940a129c355b93444abc6e5b0f6206d9, type: 3}
   quests:
   - {fileID: 11400000, guid: 8e09618d10da7d7489db30c658155ee6, type: 2}
+  - {fileID: 11400000, guid: cc1d6fcfc71b34b41a3ffa75ec34268a, type: 2}
   - {fileID: 11400000, guid: cd0cb513784f61343b295c08f41fa819, type: 2}
   currentQuestIndex: 0
   scoreText: {fileID: 634061053}

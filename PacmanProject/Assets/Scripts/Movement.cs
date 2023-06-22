@@ -23,6 +23,34 @@ public class Movement : MonoBehaviour
         {
             Swipe();
         }
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.deltaPosition.y > 15.0f)
+            {
+                if (gameObject.transform.position.y < 3)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3,0);
+                }
+                else
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, - 3,0);
+                }
+            }
+            /*else
+            {
+                if (gameObject.transform.position.y > 3)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 3,0);
+                }
+                else
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, + 3,0);
+                }
+            }*/
+        }
     }
 
     private void FixedUpdate()

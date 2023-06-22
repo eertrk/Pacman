@@ -960,6 +960,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8e09618d10da7d7489db30c658155ee6, type: 2}
   - {fileID: 11400000, guid: cd0cb513784f61343b295c08f41fa819, type: 2}
   currentQuestIndex: 0
+  scoreText: {fileID: 634061053}
+  scoreImage: {fileID: 1353999932}
 --- !u!4 &2096175293
 Transform:
   m_ObjectHideFlags: 0

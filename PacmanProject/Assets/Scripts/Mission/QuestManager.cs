@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,13 @@ public class QuestManager : MonoBehaviour
     
     public Image scoreImage;
 
+    private ParticleSystem confettiParticleSystem;
+
+
+    private void Awake()
+    {
+        confettiParticleSystem = confettiObject.GetComponent<ParticleSystem>();
+    }
 
     private void Start()
     {
@@ -33,11 +41,11 @@ public class QuestManager : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        scoreText.text = (quests[currentQuestIndex].count - PacmanController.Instance.score).ToString();
+        /*scoreText.text = (quests[currentQuestIndex].count - PacmanController.Instance.score).ToString();
         scoreImage.sprite = quests[currentQuestIndex].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
             .sprite;
         scoreImage.color = quests[currentQuestIndex].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
-            .color;
+            .color;*/
     }
 
     private void StartQuestChain()
@@ -70,13 +78,15 @@ public class QuestManager : MonoBehaviour
 
         currentQuestIndex++;
 
-        if (currentQuestIndex > quests.Length)
+        if (currentQuestIndex == quests.Length)
         {
             Debug.Log("Tüm görevler tamamlandı.");
+            Debug.Log(confettiObject.name);
+            Movement.Instance.isFinished = true;
             AudioManager.Instance.PlayClip(AudioManager.Instance.confettiClip);
-            confettiObject.GetComponent<ParticleSystem>().Play();
-            confettiObject.GetComponent<ParticleSystem>().loop = true;
-            Movement.Instance.rb.velocity = Vector2.zero;
+            confettiParticleSystem.Play();
+            Debug.Log(confettiParticleSystem.isPlaying.ToString());
+            confettiParticleSystem.loop = true;
         }
         else
         {

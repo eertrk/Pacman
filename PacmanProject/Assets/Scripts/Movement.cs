@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public bool isFinished;
+
     private void Awake()
     {
         Instance = this;
@@ -55,7 +57,14 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(ileriHiz, rb.velocity.y);
+        if (!isFinished)
+        {
+            rb.velocity = new Vector2(ileriHiz, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     private void Swipe()

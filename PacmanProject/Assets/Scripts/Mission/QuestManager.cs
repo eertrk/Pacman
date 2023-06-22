@@ -36,26 +36,38 @@ public class QuestManager : MonoBehaviour
             currentQuest.isCompleted = false;
             AssignQuestToPlayer(currentQuest);
         }
-        else
+        /*else
         {
             Debug.Log("Tüm görevler tamamlandı.");
             confettiObject.GetComponent<ParticleSystem>().Play();
             confettiObject.GetComponent<ParticleSystem>().loop = true;
             Movement.Instance.rb.velocity = Vector2.zero;
-        }
+        }*/
     }
 
     private void AssignQuestToPlayer(Quest quest)
     {
-        // Oyuncuya görevi atama işlemleri burada yer alır
         Debug.Log("Yeni görev atandı: " + quest.questName + quest.questDescription);
     }
 
     public void CompleteQuest(Quest quest)
     {
         quest.isCompleted = true;
+        
         PacmanController.Instance.score = 0;
+        
         currentQuestIndex++;
-        StartQuestChain();
+        
+        if (currentQuestIndex > quests.Length)
+        {
+            Debug.Log("Tüm görevler tamamlandı.");
+            confettiObject.GetComponent<ParticleSystem>().Play();
+            confettiObject.GetComponent<ParticleSystem>().loop = true;
+            Movement.Instance.rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            StartQuestChain();
+        }
     }
 }

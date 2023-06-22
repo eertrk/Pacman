@@ -178,8 +178,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19870626, guid: 940a129c355b93444abc6e5b0f6206d9, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19877600, guid: 940a129c355b93444abc6e5b0f6206d9, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19877600, guid: 940a129c355b93444abc6e5b0f6206d9, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19899280, guid: 940a129c355b93444abc6e5b0f6206d9, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19914696, guid: 940a129c355b93444abc6e5b0f6206d9, type: 3}
@@ -225,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792a506f71c0bcb41bb61ea818450905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
+  collectableItems:
   - {fileID: 3100406801833624591, guid: e047eff6b7c98d14eb1731538185cb1d, type: 3}
   - {fileID: 2188181599853930587, guid: 761eca4b61da59e429b1a128a7bdc565, type: 3}
   - {fileID: 3082915910386059618, guid: dcc4774a8d3dd8a4ab8d2d00bad4e599, type: 3}

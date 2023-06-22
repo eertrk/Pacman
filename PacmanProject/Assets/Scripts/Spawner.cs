@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] enemies;
+    public GameObject[] collectableItems;
     public int spawnObjectCount;
     private int randomIndex;
     private Vector2 randomPosition;
@@ -14,7 +15,7 @@ public class Spawner : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         spawnPosY.Add(-3);
         spawnPosY.Add(0);
@@ -26,16 +27,16 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < spawnObjectCount; i++)
         {
-            randomIndex = Random.Range(0, enemies.Length);
+            randomIndex = Random.Range(0, collectableItems.Length);
             randomPosition = GetRandomPoint();
-            yield return new WaitForSeconds(.2f);
-            GameObject spawnObject = Instantiate(enemies[randomIndex], randomPosition,enemies[randomIndex].transform.rotation);
+            yield return new WaitForSeconds(0f);
+            GameObject spawnObject = Instantiate(collectableItems[randomIndex], randomPosition,collectableItems[randomIndex].transform.rotation);
         }
     }
 
     private Vector2 GetRandomPoint()
     {
-        var randomXIndex = Random.Range(PacmanController.Instance.transform.position.x, 50);
+        var randomXIndex = Random.Range(10, 150);
         var randomYindex = Random.Range(0, spawnPosY.Count);
         
         randomPosition = new Vector2(randomXIndex, spawnPosY[randomYindex]);

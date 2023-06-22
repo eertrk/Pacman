@@ -32,11 +32,14 @@ public class PacmanController : MonoBehaviour
 
                 if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].targetObject.name == "CF_Ctrl")
                 {
-                    score++;
                     
                     if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].count == score)
                     {
                         QuestManager.Instance.CompleteQuest(QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex]);    
+                    }
+                    else
+                    {
+                        score++;
                     }
                 }
                 
@@ -49,11 +52,15 @@ public class PacmanController : MonoBehaviour
                 
                 if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].targetObject.name == "HF_Ctrl")
                 {
-                    score++;
+                    
                     
                     if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].count == score)
                     {
                         QuestManager.Instance.CompleteQuest(QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex]);    
+                    }
+                    else
+                    {
+                        score++;
                     }
                 }
             }
@@ -65,11 +72,14 @@ public class PacmanController : MonoBehaviour
                 
                 if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].targetObject.name == "SF_Ctrl")
                 {
-                    score++;
                     
                     if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].count == score)
                     {
                         QuestManager.Instance.CompleteQuest(QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex]);    
+                    }
+                    else
+                    {
+                        score++;
                     }
                 }
             }

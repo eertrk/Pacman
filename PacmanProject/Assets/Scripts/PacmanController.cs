@@ -23,6 +23,8 @@ public class PacmanController : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Destroy(other.gameObject);
+            
+            AudioManager.Instance.PlayClip(AudioManager.Instance.eatClip);
 
             if (other.gameObject.name == "CF_Ctrl(Clone)")
             {

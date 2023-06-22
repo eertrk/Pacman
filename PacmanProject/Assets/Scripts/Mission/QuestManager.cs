@@ -73,6 +73,7 @@ public class QuestManager : MonoBehaviour
         if (currentQuestIndex > quests.Length)
         {
             Debug.Log("Tüm görevler tamamlandı.");
+            AudioManager.Instance.PlayClip(AudioManager.Instance.confettiClip);
             confettiObject.GetComponent<ParticleSystem>().Play();
             confettiObject.GetComponent<ParticleSystem>().loop = true;
             Movement.Instance.rb.velocity = Vector2.zero;

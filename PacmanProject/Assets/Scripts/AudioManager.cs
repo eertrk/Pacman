@@ -24,6 +24,11 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        PlayClip(startGameClip);
+    }
+
     public void PlayClip(AudioClip clip)
     {
         audioSource.clip = clip;

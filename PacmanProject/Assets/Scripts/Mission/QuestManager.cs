@@ -15,6 +15,8 @@ public class QuestManager : MonoBehaviour
     public Text scoreText;
     
     public Image scoreImage;
+    
+    public GameObject finishPanel;
 
     private ParticleSystem confettiParticleSystem;
 
@@ -79,11 +81,9 @@ public class QuestManager : MonoBehaviour
         {
             Debug.Log("Tüm görevler tamamlandı.");
             Movement.Instance.isFinished = true;
-            AudioManager.Instance.PlayClip(AudioManager.Instance.confettiClip);
             confettiParticleSystem.Play();
-            Debug.Log(confettiParticleSystem.isPlaying.ToString());
-            confettiParticleSystem.loop = true;
-            Debug.Log(confettiParticleSystem.loop.ToString());
+            finishPanel.SetActive(true);
+            AudioManager.Instance.PlayClip(AudioManager.Instance.finishGameClip);
         }
         else
         {

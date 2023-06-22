@@ -41,11 +41,22 @@ public class QuestManager : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        /*scoreText.text = (quests[currentQuestIndex].count - PacmanController.Instance.score).ToString();
-        scoreImage.sprite = quests[currentQuestIndex].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
-            .sprite;
-        scoreImage.color = quests[currentQuestIndex].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
-            .color;*/
+        if (currentQuestIndex < quests.Length)
+        {
+            scoreText.text = (quests[currentQuestIndex].count - PacmanController.Instance.score).ToString();
+            scoreImage.sprite = quests[currentQuestIndex].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
+                .sprite;
+            scoreImage.color = quests[currentQuestIndex].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
+                .color;
+        }
+        else
+        {
+            scoreText.text = "0";
+            scoreImage.sprite = quests[currentQuestIndex-1].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
+                .sprite;
+            scoreImage.color = quests[currentQuestIndex-1].targetObject.transform.GetChild(0).GetComponent<SpriteRenderer>()
+                .color;
+        }
     }
 
     private void StartQuestChain()

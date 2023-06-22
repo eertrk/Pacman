@@ -41,6 +41,8 @@ public class PacmanController : MonoBehaviour
                     {
                         score++;
                     }
+                    
+                    QuestManager.Instance.UpdateScoreText();
                 }
                 
             }
@@ -62,6 +64,8 @@ public class PacmanController : MonoBehaviour
                     {
                         score++;
                     }
+                    QuestManager.Instance.UpdateScoreText();
+
                 }
             }
             else if (other.gameObject.name == "SF_Ctrl(Clone)")
@@ -72,7 +76,6 @@ public class PacmanController : MonoBehaviour
                 
                 if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].targetObject.name == "SF_Ctrl")
                 {
-                    
                     if (QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex].count == score)
                     {
                         QuestManager.Instance.CompleteQuest(QuestManager.Instance.quests[QuestManager.Instance.currentQuestIndex]);    
@@ -81,6 +84,9 @@ public class PacmanController : MonoBehaviour
                     {
                         score++;
                     }
+                    
+                    QuestManager.Instance.UpdateScoreText();
+
                 }
             }
             else

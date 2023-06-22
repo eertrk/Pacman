@@ -22,6 +22,7 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         confettiParticleSystem = confettiObject.GetComponent<ParticleSystem>();
+
     }
 
     private void Start()
@@ -29,14 +30,6 @@ public class QuestManager : MonoBehaviour
         Instance = this;
         StartQuestChain();
         UpdateScoreText();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            CompleteQuest(quests[currentQuestIndex]);
-        }
     }
 
     public void UpdateScoreText()
@@ -67,13 +60,6 @@ public class QuestManager : MonoBehaviour
             currentQuest.isCompleted = false;
             AssignQuestToPlayer(currentQuest);
         }
-        /*else
-        {
-            Debug.Log("Tüm görevler tamamlandı.");
-            confettiObject.GetComponent<ParticleSystem>().Play();
-            confettiObject.GetComponent<ParticleSystem>().loop = true;
-            Movement.Instance.rb.velocity = Vector2.zero;
-        }*/
     }
 
     private void AssignQuestToPlayer(Quest quest)
@@ -92,12 +78,12 @@ public class QuestManager : MonoBehaviour
         if (currentQuestIndex == quests.Length)
         {
             Debug.Log("Tüm görevler tamamlandı.");
-            Debug.Log(confettiObject.name);
             Movement.Instance.isFinished = true;
             AudioManager.Instance.PlayClip(AudioManager.Instance.confettiClip);
             confettiParticleSystem.Play();
             Debug.Log(confettiParticleSystem.isPlaying.ToString());
             confettiParticleSystem.loop = true;
+            Debug.Log(confettiParticleSystem.loop.ToString());
         }
         else
         {
